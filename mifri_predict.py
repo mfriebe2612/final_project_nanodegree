@@ -27,7 +27,7 @@ power = mf.gpu
 input_image = mf.input_img
 path = mf.checkpoint
 
-training_loader, testing_loader, validation_loader = mifri_class.load_data()
+train_loader, test_loader, valid_loader = mifri_class.load_data()
 
 mifri_class.loading_the_checkpoint(path)
 
