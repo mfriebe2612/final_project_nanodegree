@@ -38,11 +38,8 @@ power = mf.gpu
 epochs = mf.epochs
 
 train_loader, valid_loader, test_loader = mifri_class.load_data()
-
-model, optimizer = mifri_class.network_setup(arch,dropout,hidden_units,learning_rate)
-
-mifri_class.training_the_network(model, optimizer, epochs, train_loader)
-
+model, optimizer, criterion = mifri_class.network_setup(arch,dropout,hidden_units,learning_rate)
+mifri_class.training_the_network(model,optimizer,criterion,epochs,train_loader)
 mifri_class.saving_the_checkpoint(path,structure,hidden_units,dropout,learning_rate)
 
 print('***********************************')
