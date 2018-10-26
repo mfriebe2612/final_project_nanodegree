@@ -110,7 +110,7 @@ def load_data():
     print(cat_to_name)
     print()
 
-    return(train_loader, valid_loader, test_loader)
+    return train_loader, valid_loader, test_loader
 
 
 def network_setup(arch,dropout,hidden_units,learning_rate):
@@ -179,7 +179,7 @@ def network_setup(arch,dropout,hidden_units,learning_rate):
         print("Unfortunately no Graphic Processor available -- CPU is used!")
         print('************************************************************')
 
-    return(criterion, optimizer)
+    return model, criterion, optimizer
 
 
 
@@ -187,7 +187,7 @@ def network_setup(arch,dropout,hidden_units,learning_rate):
 # NETWORK TRAINING + PARAMETERS
 # *****************************
 
-def training_the_network(model, optimizer, epochs, train_loader):
+def training_the_network(model, optimizer, criterion, epochs, train_loader):
     epochs = 5 # for the densenet network architecture 3 is the minimum to reach 70% accuracy
     epoch_finish = epochs # reserve variable for a future break of the loop, if a ertain percentage of accuracy is reached
     desired_accuracy = 0.7 # the desired accuracy in percent / 100
