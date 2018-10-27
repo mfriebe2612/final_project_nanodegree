@@ -187,7 +187,7 @@ def network_setup(arch,dropout,hidden_units,learning_rate):
 # NETWORK TRAINING + PARAMETERS
 # *****************************
 
-def training_the_network(model, optimizer, criterion, epochs, train_loader):
+def training_the_network(model, optimizer, criterion, epochs, train_loader, valid_loader):
     epochs = 5 # for the densenet network architecture 3 is the minimum to reach 70% accuracy
     epoch_finish = epochs # reserve variable for a future break of the loop, if a ertain percentage of accuracy is reached
     desired_accuracy = 0.7 # the desired accuracy in percent / 100
@@ -280,7 +280,7 @@ def training_the_network(model, optimizer, criterion, epochs, train_loader):
 # *******************************************
 # SAVE the NETWORK in the file checkpoint.pth
 # *******************************************
-def saving_the_checkpoint(path,structure,hidden_units,dropout,learning_rate):
+def saving_the_checkpoint(path,arch,hidden_units,dropout,learning_rate):
     network_name = 'checkpoint.pth'
     filename = network_name
 
